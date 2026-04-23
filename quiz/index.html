@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz MSA — Descubra seu perfil</title>
+    <link rel="stylesheet" href="quiz-style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Progress Bar -->
+        <div class="progress-section">
+            <div class="progress-header">
+                <span class="progress-label">Analisando perfil...</span>
+                <span class="progress-pct" id="progressPct">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar" style="width: 0%"></div>
+            </div>
+            <p class="step-info" id="stepInfo">Pergunta 1 de 5</p>
+        </div>
+
+        <!-- Quiz Questions -->
+        <form id="quiz-form">
+            <!-- Pergunta 1 -->
+            <div class="question active" data-q="1">
+                <h2>Qual dessas opções descreve sua situação de trabalho hoje?</h2>
+                <div class="options">
+                    <button type="button" class="option" data-name="perfil" data-value="estetica" data-points="25">💅 Estética/Beleza (manicure, cabeleireira, esteticista)</button>
+                    <button type="button" class="option" data-name="perfil" data-value="mae" data-points="22">👩‍👧 Sou mãe e quero trabalhar em casa</button>
+                    <button type="button" class="option" data-name="perfil" data-value="clt" data-points="20">👩‍💼 Trabalho no CLT e quero renda extra</button>
+                    <button type="button" class="option" data-name="perfil" data-value="negocio" data-points="15">🏪 Tenho negócio próprio</button>
+                    <button type="button" class="option" data-name="perfil" data-value="outra" data-points="8">💼 Outra profissão</button>
+                </div>
+            </div>
+
+            <!-- Pergunta 2 -->
+            <div class="question" data-q="2">
+                <h2>Você já tentou ganhar dinheiro na internet?</h2>
+                <div class="options">
+                    <button type="button" class="option" data-name="digital" data-value="nunca" data-points="20">🌱 Nunca tentei</button>
+                    <button type="button" class="option" data-name="digital" data-value="tentou" data-points="22">😔 Já tentei e não deu certo</button>
+                    <button type="button" class="option" data-name="digital" data-value="vende" data-points="18">📈 Já vendo alguma coisa (pequeno)</button>
+                    <button type="button" class="option" data-name="digital" data-value="cursos" data-points="5">📚 Só vejo cursos, nunca aplico</button>
+                </div>
+            </div>
+
+            <!-- Pergunta 3 -->
+            <div class="question" data-q="3">
+                <h2>O que mais te segura pra começar?</h2>
+                <div class="options">
+                    <button type="button" class="option" data-name="barreira" data-value="vergonha" data-points="25">🙈 Vergonha de gravar vídeos</button>
+                    <button type="button" class="option" data-name="barreira" data-value="estoque" data-points="18">💸 Não tenho dinheiro pra estoque</button>
+                    <button type="button" class="option" data-name="barreira" data-value="tempo" data-points="15">⏰ Não tenho tempo</button>
+                    <button type="button" class="option" data-name="barreira" data-value="produto" data-points="15">🤔 Não sei o que vender</button>
+                    <button type="button" class="option" data-name="barreira" data-value="medo" data-points="12">😨 Medo de perder dinheiro</button>
+                </div>
+            </div>
+
+            <!-- Pergunta 4 -->
+            <div class="question" data-q="4">
+                <h2>Por que você quer começar AGORA?</h2>
+                <div class="options">
+                    <button type="button" class="option" data-name="urgencia" data-value="sair_emprego" data-points="25">🚀 Quero sair do emprego</button>
+                    <button type="button" class="option" data-name="urgencia" data-value="familia" data-points="22">👨‍👩‍👧 Quero liberdade pra família</button>
+                    <button type="button" class="option" data-name="urgencia" data-value="dividas" data-points="18">🆘 Preciso de renda urgente</button>
+                    <button type="button" class="option" data-name="urgencia" data-value="independencia" data-points="15">🎯 Independência financeira</button>
+                </div>
+            </div>
+
+            <!-- Pergunta 5 -->
+            <div class="question" data-q="5">
+                <h2>Quanto consegue investir pra começar?</h2>
+                <div class="options">
+                    <button type="button" class="option" data-name="investimento" data-value="1000_2000" data-points="25">💵 R$ 1.000 — 2.000</button>
+                    <button type="button" class="option" data-name="investimento" data-value="500_1000" data-points="18">💳 R$ 500 — 1.000</button>
+                    <button type="button" class="option" data-name="investimento" data-value="200_500" data-points="8">💰 R$ 200 — 500</button>
+                    <button type="button" class="option" data-name="investimento" data-value="so_curso" data-points="0">📖 Só o curso, sem anúncios</button>
+                </div>
+            </div>
+
+            <button type="submit" id="submit-btn" style="display:none;">VER MEU RESULTADO</button>
+        </form>
+
+        <!-- Resultado -->
+        <div id="result" style="display:none;">
+            <div id="result-content"></div>
+            <a href="https://wa.me/5511997059395?text=Quero%20entrar%20no%20grupo%20VIP%20MSA" class="cta-button">ENTRAR NO GRUPO VIP</a>
+        </div>
+    </div>
+
+    <script src="quiz-script.js"></script>
+</body>
+</html>
