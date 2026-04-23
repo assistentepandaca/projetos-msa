@@ -1,16 +1,17 @@
-/* Quiz Styles */
+/* Quiz Styles — Dourado, Preto, Branco */
+
 .quiz-container {
     max-width: 600px;
     margin: 0 auto;
-    background: white;
+    background: #0A0A0A;
     min-height: 100vh;
 }
 
 /* Progress */
 .progress-section {
-    background: #f8f9fa;
+    background: #141414;
     padding: 20px;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -25,26 +26,26 @@
 .progress-label {
     font-size: 14px;
     font-weight: 600;
-    color: #667eea;
+    color: #C9A227;
     text-transform: uppercase;
 }
 
 .progress-pct {
     font-size: 14px;
     font-weight: 700;
-    color: #667eea;
+    color: #C9A227;
 }
 
 .progress-bar {
     height: 8px;
-    background: #e9ecef;
+    background: #1E1E1E;
     border-radius: 10px;
     overflow: hidden;
 }
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(90deg, #C9A227 0%, #E5C158 100%);
     border-radius: 10px;
     transition: width 0.5s ease;
 }
@@ -53,7 +54,7 @@
     text-align: center;
     margin-top: 8px;
     font-size: 12px;
-    color: #6c757d;
+    color: rgba(255,255,255,0.6);
 }
 
 /* Questions */
@@ -75,7 +76,7 @@
 .question h2 {
     font-size: 1.5rem;
     margin-bottom: 25px;
-    color: #2d3748;
+    color: #FFFFFF;
     line-height: 1.4;
 }
 
@@ -91,26 +92,27 @@
     align-items: center;
     gap: 12px;
     padding: 16px;
-    background: #f7fafc;
-    border: 2px solid #e2e8f0;
+    background: #141414;
+    border: 2px solid rgba(255,255,255,0.1);
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.2s;
     font-size: 1rem;
     text-align: left;
     width: 100%;
+    color: rgba(255,255,255,0.9);
 }
 
 .option:hover {
-    border-color: #cbd5e0;
-    background: #edf2f7;
+    border-color: #C9A227;
+    background: #1E1E1E;
     transform: translateY(-1px);
 }
 
 .option.selected {
-    border-color: #667eea;
-    background: #e6fffa;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #C9A227;
+    background: rgba(201, 162, 39, 0.1);
+    box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.1);
 }
 
 /* Result */
@@ -125,19 +127,19 @@
 
 .cta-button {
     display: inline-block;
-    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
-    color: white;
+    background: linear-gradient(135deg, #C9A227 0%, #A88420 100%);
+    color: #0A0A0A;
     padding: 18px 40px;
     border-radius: 12px;
     text-decoration: none;
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 800;
     animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(72, 187, 120, 0.7); }
-    50% { box-shadow: 0 0 0 15px rgba(72, 187, 120, 0); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(201, 162, 39, 0.7); }
+    50% { box-shadow: 0 0 0 15px rgba(201, 162, 39, 0); }
 }
 
 /* Mobile */
