@@ -1,47 +1,35 @@
 /* ============================================
    MSA — Landing Page Profissional
-   Cores: Dourado + Preto + Branco
-   Baseado em: Cabelinho Black + VTurb (Tiago Filemon)
+   Cores: Branco + Dourado + Preto
    Mobile-first, alta conversão
    ============================================ */
 
-/* Reset & Base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
+    --color-bg: #FFFFFF;
+    --color-bg-light: #F9F9F7;
+    --color-bg-card: #FFFFFF;
+    --color-text: #1A1A1A;
+    --color-text-muted: #6B7280;
+    --color-text-light: #9CA3AF;
+    --color-border: #E5E7EB;
     --color-gold: #C9A227;
     --color-gold-light: #E5C158;
     --color-gold-dark: #A88420;
-    --color-gold-soft: rgba(201, 162, 39, 0.15);
-    --color-black: #0A0A0A;
-    --color-black-light: #141414;
-    --color-black-lighter: #1E1E1E;
-    --color-white: #FFFFFF;
-    --color-white-soft: rgba(255, 255, 255, 0.9);
-    --color-white-muted: rgba(255, 255, 255, 0.6);
-    --color-white-ghost: rgba(255, 255, 255, 0.1);
+    --color-gold-soft: rgba(201, 162, 39, 0.1);
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
-    --shadow-md: 0 4px 6px rgba(0,0,0,0.4);
-    --shadow-lg: 0 10px 25px rgba(0,0,0,0.5);
     --radius: 12px;
     --radius-lg: 16px;
     --max-width: 900px;
 }
 
-html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-}
+html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
     font-family: var(--font-main);
-    background: var(--color-black);
-    color: var(--color-white-soft);
+    background: var(--color-bg);
+    color: var(--color-text);
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -53,56 +41,37 @@ body {
     padding: 0 20px;
 }
 
-/* Typography */
 h1, h2, h3, h4 {
     font-weight: 800;
     line-height: 1.2;
     letter-spacing: -0.02em;
-    color: var(--color-white);
+    color: var(--color-text);
 }
 
-h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-}
-
-h2 {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    margin-bottom: 1.5rem;
-}
-
-h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-}
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: 1.5rem; }
+h3 { font-size: 1.25rem; font-weight: 700; }
 
 .highlight {
-    color: var(--color-gold-light);
+    color: var(--color-gold);
     background: var(--color-gold-soft);
     padding: 0 6px;
     border-radius: 4px;
 }
 
-/* ============================================
-   STICKY HEADER
-   ============================================ */
-
+/* Sticky Header */
 .sticky-header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(10, 10, 10, 0.95);
+    top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    border-bottom: 1px solid var(--color-white-ghost);
+    border-bottom: 1px solid var(--color-border);
     padding: 12px 0;
     transform: translateY(-100%);
     transition: transform 0.3s ease;
 }
-
-.sticky-header.visible {
-    transform: translateY(0);
-}
+.sticky-header.visible { transform: translateY(0); }
 
 .sticky-header .container {
     display: flex;
@@ -119,7 +88,7 @@ h3 {
 
 .btn-small {
     background: var(--color-gold);
-    color: var(--color-black);
+    color: #FFFFFF;
     padding: 8px 16px;
     border-radius: 8px;
     text-decoration: none;
@@ -129,32 +98,16 @@ h3 {
     letter-spacing: 0.5px;
     transition: all 0.2s;
 }
-
 .btn-small:hover {
-    background: var(--color-gold-light);
+    background: var(--color-gold-dark);
     transform: translateY(-1px);
 }
 
-/* ============================================
-   HERO SECTION
-   ============================================ */
-
+/* Hero */
 .hero {
     padding: 120px 0 80px;
-    background: var(--color-black);
+    background: var(--color-bg);
     position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(201,162,39,0.1) 0%, transparent 70%);
-    pointer-events: none;
 }
 
 .hero .container {
@@ -168,31 +121,26 @@ h3 {
     display: inline-block;
     background: var(--color-gold-soft);
     border: 1px solid var(--color-gold);
-    color: var(--color-gold-light);
+    color: var(--color-gold-dark);
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.875rem;
     font-weight: 700;
     margin-bottom: 24px;
-    animation: pulse-border 2s infinite;
-}
-
-@keyframes pulse-border {
-    0%, 100% { border-color: var(--color-gold); }
-    50% { border-color: var(--color-gold-light); }
 }
 
 .hero h1 {
     margin-bottom: 20px;
-    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gold) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-text);
+}
+
+.hero h1 span {
+    color: var(--color-gold);
 }
 
 .subheadline {
     font-size: 1.125rem;
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
     margin-bottom: 32px;
     max-width: 540px;
     line-height: 1.7;
@@ -225,7 +173,7 @@ h3 {
     justify-content: center;
     gap: 8px;
     background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
-    color: var(--color-black);
+    color: #FFFFFF;
     padding: 18px 36px;
     border-radius: var(--radius);
     text-decoration: none;
@@ -237,23 +185,6 @@ h3 {
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3);
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.5s;
-}
-
-.btn-primary:hover::before {
-    left: 100%;
 }
 
 .btn-primary:hover {
@@ -267,31 +198,22 @@ h3 {
 
 @keyframes btn-pulse {
     0%, 100% { box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3); }
-    50% { box-shadow: 0 4px 25px rgba(201, 162, 39, 0.6); }
+    50% { box-shadow: 0 4px 25px rgba(201, 162, 39, 0.5); }
 }
 
-.btn-large {
-    padding: 20px 40px;
-    font-size: 1.1rem;
-}
-
-.btn-huge {
-    padding: 24px 48px;
-    font-size: 1.25rem;
-    width: 100%;
-    max-width: 500px;
-}
+.btn-large { padding: 20px 40px; font-size: 1.1rem; }
+.btn-huge { padding: 24px 48px; font-size: 1.25rem; width: 100%; max-width: 500px; }
 
 .guarantee {
     margin-top: 16px;
     font-size: 0.875rem;
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
     display: flex;
     align-items: center;
     gap: 6px;
 }
 
-/* Hero Visual / VSL Placeholder */
+/* Hero Visual */
 .hero-visual {
     display: flex;
     justify-content: center;
@@ -301,7 +223,7 @@ h3 {
     width: 100%;
     max-width: 480px;
     aspect-ratio: 16/9;
-    background: var(--color-black-light);
+    background: var(--color-bg-light);
     border-radius: var(--radius-lg);
     display: flex;
     flex-direction: column;
@@ -313,8 +235,8 @@ h3 {
 }
 
 .vsl-placeholder:hover {
-    border-color: var(--color-gold-light);
-    background: var(--color-black-lighter);
+    border-color: var(--color-gold-dark);
+    background: var(--color-bg);
 }
 
 .play-button {
@@ -326,29 +248,21 @@ h3 {
     align-items: center;
     justify-content: center;
     font-size: 28px;
-    color: var(--color-black);
+    color: #FFFFFF;
     margin-bottom: 12px;
     box-shadow: 0 4px 20px rgba(201, 162, 39, 0.4);
-    transition: transform 0.2s;
-}
-
-.vsl-placeholder:hover .play-button {
-    transform: scale(1.1);
 }
 
 .vsl-placeholder p {
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
     font-size: 0.9rem;
 }
 
-/* ============================================
-   SOCIAL PROOF BAR
-   ============================================ */
-
+/* Social Bar */
 .social-bar {
-    background: var(--color-black-light);
-    border-top: 1px solid var(--color-white-ghost);
-    border-bottom: 1px solid var(--color-white-ghost);
+    background: var(--color-bg-light);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
     padding: 40px 0;
 }
 
@@ -369,16 +283,14 @@ h3 {
 
 .stat-label {
     font-size: 0.875rem;
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
     margin-top: 4px;
 }
 
-/* ============================================
-   PAIN POINTS
-   ============================================ */
-
+/* Pain Points */
 .pain-points {
     padding: 80px 0;
+    background: var(--color-bg-light);
 }
 
 .pain-points h2 {
@@ -394,19 +306,21 @@ h3 {
 }
 
 .pain {
-    background: var(--color-black-light);
+    background: var(--color-bg-card);
     padding: 24px;
     border-radius: var(--radius);
-    border: 1px solid var(--color-white-ghost);
+    border: 1px solid var(--color-border);
     display: flex;
     align-items: flex-start;
     gap: 16px;
     transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .pain:hover {
     border-color: var(--color-gold);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .pain-icon {
@@ -415,7 +329,7 @@ h3 {
 }
 
 .pain p {
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
     font-size: 0.95rem;
     line-height: 1.6;
 }
@@ -423,7 +337,7 @@ h3 {
 .transition {
     text-align: center;
     font-size: 1.1rem;
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
     max-width: 600px;
     margin: 0 auto;
     padding: 24px;
@@ -432,13 +346,10 @@ h3 {
     border-left: 4px solid var(--color-gold);
 }
 
-/* ============================================
-   STORY
-   ============================================ */
-
+/* Story */
 .story {
     padding: 80px 0;
-    background: var(--color-black-light);
+    background: var(--color-bg);
 }
 
 .story h2 {
@@ -453,49 +364,44 @@ h3 {
 }
 
 .period {
-    background: var(--color-black);
+    background: var(--color-bg-card);
     padding: 32px;
     border-radius: var(--radius-lg);
-    border: 1px solid var(--color-white-ghost);
-    position: relative;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .period-badge {
     display: inline-block;
     background: var(--color-gold);
-    color: var(--color-black);
+    color: #FFFFFF;
     padding: 6px 16px;
     border-radius: 20px;
     font-size: 0.875rem;
     font-weight: 800;
     margin-bottom: 16px;
-    letter-spacing: 0.5px;
 }
 
 .period h3 {
     font-size: 1.5rem;
     margin-bottom: 12px;
-    color: var(--color-white);
+    color: var(--color-text);
 }
 
 .period p {
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
     margin-bottom: 12px;
     line-height: 1.7;
 }
 
-.period p:last-child {
-    margin-bottom: 0;
-}
-
 .highlight-period {
     border-color: var(--color-gold);
-    box-shadow: 0 0 30px rgba(201, 162, 39, 0.1);
+    box-shadow: 0 0 20px rgba(201, 162, 39, 0.1);
 }
 
 .success-period {
     border-color: var(--color-gold-light);
-    box-shadow: 0 0 30px rgba(201, 162, 39, 0.15);
+    box-shadow: 0 0 20px rgba(201, 162, 39, 0.15);
 }
 
 .proof-inline {
@@ -504,24 +410,22 @@ h3 {
     gap: 16px;
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid var(--color-white-ghost);
+    border-top: 1px solid var(--color-border);
 }
 
 .proof-inline span {
     background: var(--color-gold-soft);
-    color: var(--color-gold-light);
+    color: var(--color-gold-dark);
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.875rem;
     font-weight: 600;
 }
 
-/* ============================================
-   MECHANISM
-   ============================================ */
-
+/* Mechanism */
 .mechanism {
     padding: 80px 0;
+    background: var(--color-bg-light);
 }
 
 .mechanism h2 {
@@ -531,7 +435,7 @@ h3 {
 
 .mechanism-intro {
     text-align: center;
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
     max-width: 600px;
     margin: 0 auto 48px;
 }
@@ -543,25 +447,26 @@ h3 {
 }
 
 .step {
-    background: var(--color-black-light);
+    background: var(--color-bg-card);
     padding: 32px;
     border-radius: var(--radius-lg);
     text-align: center;
-    border: 1px solid var(--color-white-ghost);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     transition: all 0.3s;
 }
 
 .step:hover {
     transform: translateY(-4px);
     border-color: var(--color-gold);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
 .step-number {
     width: 50px;
     height: 50px;
     background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
-    color: var(--color-black);
+    color: #FFFFFF;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -573,21 +478,18 @@ h3 {
 
 .step h3 {
     margin-bottom: 8px;
-    color: var(--color-white);
+    color: var(--color-text);
 }
 
 .step p {
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
     font-size: 0.95rem;
 }
 
-/* ============================================
-   OFFER
-   ============================================ */
-
+/* Offer */
 .offer {
     padding: 80px 0;
-    background: var(--color-black-light);
+    background: var(--color-bg);
 }
 
 .offer h2 {
@@ -603,16 +505,19 @@ h3 {
 }
 
 .offer-item {
-    background: var(--color-black);
+    background: var(--color-bg-card);
     padding: 28px;
     border-radius: var(--radius);
-    border: 1px solid var(--color-white-ghost);
+    border: 1px solid var(--color-border);
     text-align: center;
     transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .offer-item:hover {
     border-color: var(--color-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .offer-icon {
@@ -624,16 +529,16 @@ h3 {
 .offer-item h4 {
     margin-bottom: 8px;
     font-size: 1.1rem;
-    color: var(--color-white);
+    color: var(--color-text);
 }
 
 .offer-item p {
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
     font-size: 0.9rem;
 }
 
 .price-box {
-    background: var(--color-black);
+    background: var(--color-bg-card);
     border: 2px solid var(--color-gold);
     border-radius: var(--radius-lg);
     padding: 40px;
@@ -642,6 +547,7 @@ h3 {
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .price-box::before {
@@ -656,7 +562,7 @@ h3 {
 
 .price-before {
     font-size: 1.25rem;
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
     text-decoration: line-through;
     margin-bottom: 8px;
 }
@@ -671,40 +577,39 @@ h3 {
 .price-now span {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
 }
 
 .price-installment {
     font-size: 1.1rem;
-    color: var(--color-gold-light);
+    color: var(--color-gold-dark);
     margin-top: 8px;
 }
 
-/* ============================================
-   QUIZ SECTION
-   ============================================ */
-
+/* Quiz Section */
 .quiz-section {
     padding: 80px 0;
+    background: var(--color-bg-light);
 }
 
 .quiz-card {
-    background: var(--color-black-light);
+    background: var(--color-bg-card);
     border: 2px solid var(--color-gold);
     border-radius: var(--radius-lg);
     padding: 48px 32px;
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
-    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .quiz-card h2 {
     margin-bottom: 16px;
+    color: var(--color-text);
 }
 
 .quiz-sub {
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
     margin-bottom: 32px;
     font-size: 1.05rem;
 }
@@ -712,15 +617,13 @@ h3 {
 .quiz-note {
     margin-top: 16px;
     font-size: 0.875rem;
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
 }
 
-/* ============================================
-   FAQ
-   ============================================ */
-
+/* FAQ */
 .faq {
     padding: 80px 0;
+    background: var(--color-bg-light);
 }
 
 .faq h2 {
@@ -737,10 +640,11 @@ h3 {
 }
 
 .faq-item {
-    background: var(--color-black-light);
+    background: var(--color-bg-card);
     border-radius: var(--radius);
     overflow: hidden;
-    border: 1px solid var(--color-white-ghost);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .faq-question {
@@ -748,7 +652,7 @@ h3 {
     padding: 20px 24px;
     background: none;
     border: none;
-    color: var(--color-white);
+    color: var(--color-text);
     font-size: 1rem;
     font-weight: 600;
     text-align: left;
@@ -786,22 +690,19 @@ h3 {
 
 .faq-answer p {
     padding: 0 24px 20px;
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
     line-height: 1.7;
 }
 
 .faq-answer strong {
-    color: var(--color-white);
+    color: var(--color-text);
 }
 
-/* ============================================
-   FINAL CTA
-   ============================================ */
-
+/* Final CTA */
 .final-cta {
     padding: 100px 0;
     text-align: center;
-    background: var(--color-black-light);
+    background: var(--color-bg);
 }
 
 .final-cta h2 {
@@ -810,7 +711,7 @@ h3 {
 
 .final-text {
     font-size: 1.2rem;
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
     max-width: 600px;
     margin: 0 auto 32px;
     line-height: 1.7;
@@ -824,7 +725,7 @@ h3 {
     display: inline-block;
     background: var(--color-gold-soft);
     border: 1px solid var(--color-gold);
-    color: var(--color-gold-light);
+    color: var(--color-gold-dark);
     padding: 12px 24px;
     border-radius: var(--radius);
     font-size: 1.1rem;
@@ -841,21 +742,19 @@ h3 {
 
 .guarantee-final span {
     font-size: 0.95rem;
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
-
+/* Footer */
 .footer {
     padding: 40px 0;
     text-align: center;
-    border-top: 1px solid var(--color-white-ghost);
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg-light);
 }
 
 .footer p {
-    color: var(--color-white-muted);
+    color: var(--color-text-muted);
     font-size: 0.9rem;
 }
 
@@ -865,28 +764,25 @@ h3 {
     opacity: 0.6;
 }
 
-/* ============================================
-   STICKY MOBILE CTA
-   ============================================ */
-
+/* Sticky Mobile CTA */
 .sticky-mobile {
     display: none;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(255,255,255,0.95);
     backdrop-filter: blur(10px);
     padding: 12px 16px;
     z-index: 999;
-    border-top: 1px solid var(--color-white-ghost);
+    border-top: 1px solid var(--color-border);
 }
 
 .btn-sticky {
     display: block;
     width: 100%;
     background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
-    color: var(--color-black);
+    color: #FFFFFF;
     padding: 14px 24px;
     border-radius: var(--radius);
     text-decoration: none;
@@ -898,10 +794,7 @@ h3 {
     animation: btn-pulse 2s infinite;
 }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-
+/* Responsive */
 @media (min-width: 768px) {
     .hero .container {
         grid-template-columns: 1fr 1fr;
@@ -962,16 +855,5 @@ h3 {
     
     .sticky-header {
         display: none;
-    }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
     }
 }
