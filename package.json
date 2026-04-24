@@ -1,0 +1,44 @@
+{
+  "name": "projetos-msa",
+  "version": "1.0.0",
+  "description": "Repositório de lançamentos, automações e infraestrutura digital para os projetos da Carla Felicio.",
+  "main": "quiz-script.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "remotion": "npx remotion",
+    "studio": "npx remotion studio remotion/Root.tsx",
+    "render:vsl": "npx remotion render remotion/Root.tsx VSLCarla output/vsl_carla.mp4",
+    "render:ad": "npx remotion render remotion/Root.tsx CriativoAds output/criativo_ads.mp4",
+    "render:story": "npx remotion render remotion/Root.tsx StoryReels output/story_reels.mp4",
+    "render:all": "npm run render:vsl && npm run render:ad && npm run render:story"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/assistentepandaca/projetos-msa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/assistentepandaca/projetos-msa/issues"
+  },
+  "homepage": "https://github.com/assistentepandaca/projetos-msa#readme",
+  "dependencies": {
+    "@remotion/cli": "^4.0.451",
+    "@remotion/gif": "^4.0.451",
+    "@remotion/lottie": "^4.0.451",
+    "@remotion/media-utils": "^4.0.451",
+    "@remotion/motion-blur": "^4.0.451",
+    "@remotion/noise": "^4.0.451",
+    "@remotion/player": "^4.0.451",
+    "@remotion/shapes": "^4.0.451",
+    "@remotion/skia": "^4.0.451",
+    "@remotion/three": "^4.0.451",
+    "@remotion/transitions": "^4.0.451",
+    "remotion": "^4.0.451",
+    "remotion-animated": "^2.2.0"
+  }
+}
